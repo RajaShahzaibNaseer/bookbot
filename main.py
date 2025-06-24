@@ -4,12 +4,12 @@ import sys
 def get_book_text(path_to_file):
     with open(path_to_file) as f:
         file_contents = f.read()
-        report_maker(file_contents)
+        report_maker(file_contents, path_to_file)
 
 
-def report_maker(file_contents):
+def report_maker(file_contents, path_to_file):
     print("============ BOOKBOT ============")
-    print("Analyzing book found at books/frankenstein.txt...")
+    print(f"Analyzing book found at {path_to_file}")
     print("----------- Word Count ----------")
     get_word_count(file_contents)
     print("--------- Character Count -------")
@@ -22,10 +22,10 @@ def report_maker(file_contents):
 
 def main():
     if len(sys.argv) > 1:
-        get_book_text(sys.argv[0])
+        get_book_text(sys.argv[1])
     else:
         print("Usage: python3 main.py <path_to_book>")
-        sys.exit()
+        sys.exit(1)
 
 
 if __name__ == "__main__":
