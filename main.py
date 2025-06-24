@@ -21,8 +21,7 @@ def report_maker(file_contents):
 
 
 def main():
-    # path_to_file = "/home/shahzaib/linux-work/bookbot/books/frankenstein.txt"
-    if sys.argv[0]:
+    if len(sys.argv) > 1:
         get_book_text(sys.argv[0])
     else:
         print("Usage: python3 main.py <path_to_book>")
