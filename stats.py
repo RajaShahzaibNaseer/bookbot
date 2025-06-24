@@ -2,7 +2,7 @@
 #for getting word count
 def get_word_count(file_contents):
     word_count = len(file_contents.split())
-    print(f"{word_count} words found in the document")
+    print(f"Found {word_count} total words")
 
 
 #for getting character count
@@ -15,7 +15,7 @@ def get_character_count(content):
                 character_counter[char] += 1
             else:
                 character_counter[char] = 1
-    print(character_counter)
+    return sorted_list_maker(character_counter)
 
 
 #for making sorted list
